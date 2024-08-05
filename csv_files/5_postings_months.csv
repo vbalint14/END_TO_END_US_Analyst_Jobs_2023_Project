@@ -1,0 +1,61 @@
+index,job_location,job_posted_month,count
+0,Atlanta,1,495
+1,Atlanta,2,379
+2,Atlanta,3,413
+3,Atlanta,4,377
+4,Atlanta,5,363
+5,Atlanta,6,356
+6,Atlanta,7,368
+7,Atlanta,8,465
+8,Atlanta,9,386
+9,Atlanta,10,333
+10,Atlanta,11,255
+11,Atlanta,12,244
+12,Austin,1,320
+13,Austin,2,247
+14,Austin,3,276
+15,Austin,4,286
+16,Austin,5,226
+17,Austin,6,228
+18,Austin,7,189
+19,Austin,8,319
+20,Austin,9,259
+21,Austin,10,240
+22,Austin,11,195
+23,Austin,12,211
+24,Chicago,1,449
+25,Chicago,2,247
+26,Chicago,3,271
+27,Chicago,4,248
+28,Chicago,5,273
+29,Chicago,6,293
+30,Chicago,7,317
+31,Chicago,8,358
+32,Chicago,9,287
+33,Chicago,10,309
+34,Chicago,11,224
+35,Chicago,12,198
+36,Dallas,1,340
+37,Dallas,2,246
+38,Dallas,3,279
+39,Dallas,4,261
+40,Dallas,5,212
+41,Dallas,6,262
+42,Dallas,7,216
+43,Dallas,8,275
+44,Dallas,9,313
+45,Dallas,10,276
+46,Dallas,11,216
+47,Dallas,12,332
+48,New York,1,596
+49,New York,2,486
+50,New York,3,459
+51,New York,4,414
+52,New York,5,356
+53,New York,6,450
+54,New York,7,483
+55,New York,8,534
+56,New York,9,452
+57,New York,10,469
+58,New York,11,439
+59,New York,12,390
