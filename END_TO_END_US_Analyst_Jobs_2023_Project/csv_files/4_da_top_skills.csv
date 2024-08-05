@@ -1,0 +1,26 @@
+job_location,job_skills,count,count_total,percentage
+New York,sql,851,2717,31
+New York,excel,664,2717,24
+New York,tableau,585,2717,21
+New York,python,542,2717,19
+New York,sas,294,2717,10
+Atlanta,sql,1295,2419,53
+Atlanta,excel,930,2419,38
+Atlanta,tableau,750,2419,31
+Atlanta,python,653,2419,26
+Atlanta,sas,552,2419,22
+Chicago,sql,1552,1987,78
+Chicago,excel,1147,1987,57
+Chicago,python,916,1987,46
+Chicago,tableau,907,1987,45
+Chicago,r,518,1987,26
+Dallas,sql,1101,1609,68
+Dallas,excel,873,1609,54
+Dallas,python,612,1609,38
+Dallas,tableau,610,1609,37
+Dallas,sas,420,1609,26
+Austin,sql,891,1598,55
+Austin,excel,638,1598,39
+Austin,tableau,487,1598,30
+Austin,python,427,1598,26
+Austin,power bi,326,1598,20
