@@ -85,8 +85,32 @@ The goal of this analysis is to define the top 5 skills regarding all analyst ro
 | Austin       | Python     | 427   | 1598        | 26         |
 | Austin       | Power BI   | 326   | 1598        | 20         |
 
-
-**Content of []():**
+## 5. Count of analyst job postings throughout 2023
+The final analysis of the project summarizes analyst job postings in the 5 cities and breaks them down to months. <br>
+**The first 20 lines of [5_postings_months](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/5_postings_months.csv):**
+| Index | Job Location | Job Posted Month | Count |
+|-------|--------------|------------------|-------|
+| 0     | Atlanta      | 1                | 495   |
+| 1     | Atlanta      | 2                | 379   |
+| 2     | Atlanta      | 3                | 413   |
+| 3     | Atlanta      | 4                | 377   |
+| 4     | Atlanta      | 5                | 363   |
+| 5     | Atlanta      | 6                | 356   |
+| 6     | Atlanta      | 7                | 368   |
+| 7     | Atlanta      | 8                | 465   |
+| 8     | Atlanta      | 9                | 386   |
+| 9     | Atlanta      | 10               | 333   |
+| 10    | Atlanta      | 11               | 255   |
+| 11    | Atlanta      | 12               | 244   |
+| 12    | Austin       | 1                | 320   |
+| 13    | Austin       | 2                | 247   |
+| 14    | Austin       | 3                | 276   |
+| 15    | Austin       | 4                | 286   |
+| 16    | Austin       | 5                | 226   |
+| 17    | Austin       | 6                | 228   |
+| 18    | Austin       | 7                | 189   |
+| 19    | Austin       | 8                | 319   |
+<>
 ## The final dashboard
 ![image](https://github.com/user-attachments/assets/67477cdd-3e63-47b3-acdc-7f6bf6e34065)
 
