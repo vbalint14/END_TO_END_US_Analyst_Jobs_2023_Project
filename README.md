@@ -34,13 +34,56 @@ This analysis focuses on annual salaries comparing three major analyst roles: BI
 | Senior Data Analyst| New York | 114934 | 60000 | 340000 |
 
 ## 3. Job postings per Analyst roles
-The third analysis highlights the division between the mentioned three main analyst roles on the job market:
+The third analysis highlights the division between the mentioned three main analyst roles on the job market: <br>
 **Content of [3_da_job_postings](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/3_da_job_postings.csv):**
+| Job Title          | Job Location | Count |
+|--------------------|--------------|-------|
+| Business Analyst   | Atlanta      | 298   |
+| Business Analyst   | Austin       | 196   |
+| Business Analyst   | Chicago      | 221   |
+| Business Analyst   | Dallas       | 204   |
+| Business Analyst   | New York     | 158   |
+| Data Analyst       | Atlanta      | 1711  |
+| Data Analyst       | Austin       | 1235  |
+| Data Analyst       | Chicago      | 1442  |
+| Data Analyst       | Dallas       | 1170  |
+| Data Analyst       | New York     | 2170  |
+| Senior Data Analyst| Atlanta      | 410   |
+| Senior Data Analyst| Austin       | 167   |
+| Senior Data Analyst| Chicago      | 324   |
+| Senior Data Analyst| Dallas       | 235   |
+| Senior Data Analyst| New York     | 389   |
 
-
-
-
-**Content of []():**
+## 4. Most required analyst skills
+The goal of this analysis is to define the top 5 skills regarding all analyst roles per city. <br>
+**Content of [4_da_top_skills](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/4_da_top_skills.csv):**
+| Job Location | Job Skills | Count | Count Total | Percentage |
+|--------------|------------|-------|-------------|------------|
+| New York     | SQL        | 851   | 2717        | 31         |
+| New York     | Excel      | 664   | 2717        | 24         |
+| New York     | Tableau    | 585   | 2717        | 21         |
+| New York     | Python     | 542   | 2717        | 19         |
+| New York     | SAS        | 294   | 2717        | 10         |
+| Atlanta      | SQL        | 1295  | 2419        | 53         |
+| Atlanta      | Excel      | 930   | 2419        | 38         |
+| Atlanta      | Tableau    | 750   | 2419        | 31         |
+| Atlanta      | Python     | 653   | 2419        | 26         |
+| Atlanta      | SAS        | 552   | 2419        | 22         |
+| Chicago      | SQL        | 1552  | 1987        | 78         |
+| Chicago      | Excel      | 1147  | 1987        | 57         |
+| Chicago      | Python     | 916   | 1987        | 46         |
+| Chicago      | Tableau    | 907   | 1987        | 45         |
+| Chicago      | R          | 518   | 1987        | 26         |
+| Dallas       | SQL        | 1101  | 1609        | 68         |
+| Dallas       | Excel      | 873   | 1609        | 54         |
+| Dallas       | Python     | 612   | 1609        | 38         |
+| Dallas       | Tableau    | 610   | 1609        | 37         |
+| Dallas       | SAS        | 420   | 1609        | 26         |
+| Austin       | SQL        | 891   | 1598        | 55         |
+| Austin       | Excel      | 638   | 1598        | 39         |
+| Austin       | Tableau    | 487   | 1598        | 30         |
+| Austin       | Python     | 427   | 1598        | 26         |
+| Austin       | Power BI   | 326   | 1598        | 20         |
 
 
 **Content of []():**
