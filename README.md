@@ -292,5 +292,5 @@ df_months.to_csv('5_posting_months.csv', index=True, index_name='Index')
 ```
 
 ## The final dashboard
-![image](https://github.com/user-attachments/assets/ba7756ea-71f8-4614-90c8-2196119fd67b)
+![image](https://github.com/user-attachments/assets/ba7756ea-71f8-4614-90c8-2196119fd67b){width=50%}
 
