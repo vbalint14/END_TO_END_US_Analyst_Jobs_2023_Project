@@ -261,7 +261,7 @@ The final analysis of the project summarizes analyst job postings in the 5 citie
 | 18    | Austin       | 7                | 189   |
 | 19    | Austin       | 8                | 319   |
 
-<br>**Python script: ([5_posting_months.ipynb]())**
+<br>**Python script: ([5_posting_months.ipynb](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/5_posting_months.ipynb))**
 ```python
 import pandas as pd  # Import pandas for data manipulation
 import ast  # Import ast for converting strings to lists
