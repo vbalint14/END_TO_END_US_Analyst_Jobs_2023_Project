@@ -53,9 +53,35 @@ This analysis focuses on annual salaries comparing three major analyst roles: BI
 | Senior Data Analyst| Chicago  | 114952 | 82000 | 162500 |
 | Senior Data Analyst| Dallas   | 114844 | 71850 | 175000 |
 | Senior Data Analyst| New York | 114934 | 60000 | 340000 |
-**Python script**: []():
+<br>**Python script: [2_da_median_salaries.ipynb]((https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/2_da_median_salaries.ipynb)):**:
 ```python
+import pandas as pd
+df=pd.read_csv('data_jobs_cleaned.csv')
 
+df_us_job_counts=pd.read_csv('1_data_jobs_location_counts.csv')
+df['job_location'] = df['job_location'].str.split(',', expand=True)[0].str.strip()
+states_list=df_us_job_counts['job_location'].tolist()
+
+df_us_job_counts=(df[(df['job_title_short'].str.contains('Analyst')) & (df['job_country']=='United States')]
+.groupby('job_location')
+.size()
+.sort_values(ascending=False)
+.head(5)
+)
+df_us_job_counts=df_us_job_counts.reset_index(name='count')
+
+df_us_da=df[(df['job_location'].isin(states_list)) & (df['job_title_short'].str.contains('Analyst'))]
+df_us_da['job_location'].value_counts()
+df_us_da['job_title_short'].value_counts()
+
+import numpy as np
+da_jobs_grouped=df_us_da.groupby(['job_title_short', 'job_location'])['salary_year_avg'].agg(['mean', 'min', 'max'])
+da_jobs_grouped['mean']=np.ceil(da_jobs_grouped['mean'])
+da_jobs_grouped['mean']=da_jobs_grouped['mean'].astype(int)
+da_jobs_grouped['min']=da_jobs_grouped['min'].astype(int)
+da_jobs_grouped['max']=da_jobs_grouped['max'].astype(int)
+
+da_jobs_grouped.to_csv('2_analyst_salaries.csv')
 ```
 ## 3. Job postings per Analyst roles
 The third analysis highlights the division between the mentioned three main analyst roles on the job market: <br>
