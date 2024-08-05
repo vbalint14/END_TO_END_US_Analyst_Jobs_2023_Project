@@ -11,12 +11,15 @@ The first analysis contains data about the five most popular US cities: New York
 | Chicago      | 1985  |
 | Dallas       | 1587  |
 | Austin       | 1584  |
-**Python script**: []():
+
+<br>**Python script**: []():
 ```python
 import pandas as pd
 df=pd.read_csv('data_jobs_cleaned.csv')
+
 df=df[(df['job_location']!='Anywhere') & (df['job_location']!='United States')]
 df['job_location'] = df['job_location'].str.split(',', expand=True)[0].str.strip()
+
 # Summarizing the frequency of job locations in job postings
 df_us_job_counts=(df[(df['job_title_short']=='Data Analyst') & (df['job_country']=='United States')]
 .groupby('job_location')
@@ -24,8 +27,9 @@ df_us_job_counts=(df[(df['job_title_short']=='Data Analyst') & (df['job_country'
 .sort_values(ascending=False)
 .head(15)
 )
+
 df_us_job_counts=df_us_job_counts.reset_index(name='count')
-df_us_job_counts
+
 # Saving the filtered dataframe to a csv file
 df_us_job_counts.to_csv('1_data_jobs_location_counts.csv', index=False)
 ```
