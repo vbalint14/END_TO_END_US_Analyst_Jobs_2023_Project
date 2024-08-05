@@ -3,7 +3,7 @@ The project includes an [original dataset](https://huggingface.co/datasets/lukeb
 
 
 ## 1. Count of Job postings per City
-The first analysis contains data about the five most popular US cities: New York, Atlanta, Austin, Dallas and Chicago.
+The first analysis contains data about the five most popular US cities: New York, Atlanta, Austin, Dallas and Chicago. <br>
 Content of [1_data_jobs_location_counts](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/1_data_jobs_location_counts.csv):
 | Job Location | Count |
 |--------------|-------|
@@ -14,7 +14,7 @@ Content of [1_data_jobs_location_counts](https://github.com/vbalint14/END_TO_END
 | Austin       | 1584  |
 
 ## 2. Annual analyst salaries
-This analysis focuses on annual salaries comparing three major analyst roles: BI analyst, Data Analyst and Senior Data Analyst.
+This analysis focuses on annual salaries comparing three major analyst roles: BI analyst, Data Analyst and Senior Data Analyst. <br>
 Content of [2_analyst_salaries](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/2_analyst_salaries.csv):
 | Job Title       | Job Location | Mean   | Min   | Max    |
 |-----------------|--------------|--------|-------|--------|
