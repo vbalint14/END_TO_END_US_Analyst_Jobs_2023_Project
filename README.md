@@ -3,7 +3,7 @@ The project includes an [original dataset](https://huggingface.co/datasets/lukeb
 <br>
 ## 1. Count of Job postings per City
 The first analysis contains data about the five most popular US cities: New York, Atlanta, Austin, Dallas and Chicago. <br>
-**Content of [1_data_jobs_location_counts](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/1_data_jobs_location_counts.csv):**
+**Content of [1_data_jobs_location_counts.csv](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/1_data_jobs_location_counts.csv):**
 | Job Location | Count |
 |--------------|-------|
 | New York     | 2715  |
@@ -12,7 +12,7 @@ The first analysis contains data about the five most popular US cities: New York
 | Dallas       | 1587  |
 | Austin       | 1584  |
 
-<br>**Python script**: []():
+<br>**Python script**: [1_job_locations.ipynb](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/1_job_locations.ipynb):
 ```python
 import pandas as pd
 df=pd.read_csv('data_jobs_cleaned.csv')
@@ -35,7 +35,7 @@ df_us_job_counts.to_csv('1_data_jobs_location_counts.csv', index=False)
 ```
 ## 2. Annual analyst salaries
 This analysis focuses on annual salaries comparing three major analyst roles: BI analyst, Data Analyst and Senior Data Analyst. <br>
-**Content of [2_analyst_salaries](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/2_analyst_salaries.csv):**
+**Content of [2_analyst_salaries.csv](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/2_analyst_salaries.csv):**
 | Job Title       | Job Location | Mean   | Min   | Max    |
 |-----------------|--------------|--------|-------|--------|
 | Business Analyst| Atlanta      | 113731 | 60000 | 151950 |
@@ -59,7 +59,7 @@ This analysis focuses on annual salaries comparing three major analyst roles: BI
 ```
 ## 3. Job postings per Analyst roles
 The third analysis highlights the division between the mentioned three main analyst roles on the job market: <br>
-**Content of [3_da_job_postings](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/3_da_job_postings.csv):**
+**Content of [3_da_job_postings.csv](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/3_da_job_postings.csv):**
 | Job Title          | Job Location | Count |
 |--------------------|--------------|-------|
 | Business Analyst   | Atlanta      | 298   |
@@ -83,7 +83,7 @@ The third analysis highlights the division between the mentioned three main anal
 ```
 ## 4. Most required analyst skills
 The goal of this analysis is to define the top 5 skills regarding all analyst roles per city. <br>
-**Content of [4_da_top_skills](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/4_da_top_skills.csv):**
+**Content of [4_da_top_skills.csv](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/4_da_top_skills.csv):**
 | Job Location | Job Skills | Count | Count Total | Percentage |
 |--------------|------------|-------|-------------|------------|
 | New York     | SQL        | 851   | 2717        | 31         |
@@ -117,7 +117,7 @@ The goal of this analysis is to define the top 5 skills regarding all analyst ro
 ```
 ## 5. Count of analyst job postings throughout 2023
 The final analysis of the project summarizes analyst job postings in the 5 cities and breaks them down to months. <br>
-**The first 20 lines of [5_postings_months](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/5_postings_months.csv):**
+**The first 20 lines of [5_postings_months.csv](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/5_postings_months.csv):**
 | Index | Job Location | Job Posted Month | Count |
 |-------|--------------|------------------|-------|
 | 0     | Atlanta      | 1                | 495   |
