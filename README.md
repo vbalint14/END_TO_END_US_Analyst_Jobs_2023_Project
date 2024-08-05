@@ -15,23 +15,43 @@ The first analysis contains data about the five most popular US cities: New York
 <br>**Python script: ([1_job_locations.ipynb](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/1_job_locations.ipynb))**
 ```python
 import pandas as pd
-df=pd.read_csv('data_jobs_cleaned.csv')
-
-df=df[(df['job_location']!='Anywhere') & (df['job_location']!='United States')]
+# Load the cleaned jobs data
+df = pd.read_csv('data_jobs_cleaned.csv')
+# Load the job counts data by location
+df_us_job_counts = pd.read_csv('1_data_jobs_location_counts.csv')
+# Clean the 'job_location' column to keep only the first part before the comma and strip any whitespace
 df['job_location'] = df['job_location'].str.split(',', expand=True)[0].str.strip()
+# Create a list of job locations from the job counts data
+states_list = df_us_job_counts['job_location'].tolist()
+# Filter and count the top 5 job locations in the US for 'Analyst' job titles
+df_us_job_counts = (df[(df['job_title_short'].str.contains('Analyst')) & (df['job_country'] == 'United States')]
+                    .groupby('job_location')
+                    .size()
+                    .sort_values(ascending=False)
+                    .head(5)
+                   )
+# Reset the index of the job counts dataframe and rename the size column to 'count'
+df_us_job_counts = df_us_job_counts.reset_index(name='count')
+# Display the job counts dataframe
+df_us_job_counts
+# Filter the original dataframe for 'Analyst' jobs in the top states
+df_us_da = df[(df['job_location'].isin(states_list)) & (df['job_title_short'].str.contains('Analyst'))]
+# Display the counts of job locations
+df_us_da['job_location'].value_counts()
+# Display the counts of job titles
+df_us_da['job_title_short'].value_counts()
 
-# Summarizing the frequency of job locations in job postings
-df_us_job_counts=(df[(df['job_title_short']=='Data Analyst') & (df['job_country']=='United States')]
-.groupby('job_location')
-.size()
-.sort_values(ascending=False)
-.head(15)
-)
-
-df_us_job_counts=df_us_job_counts.reset_index(name='count')
-
-# Saving the filtered dataframe to a csv file
-df_us_job_counts.to_csv('1_data_jobs_location_counts.csv', index=False)
+import numpy as np
+# Group the data by job title and location, and aggregate the average, minimum, and maximum salaries
+da_jobs_grouped = df_us_da.groupby(['job_title_short', 'job_location'])['salary_year_avg'].agg(['mean', 'min', 'max'])
+# Round up the mean salary values and convert all salary columns to integers
+da_jobs_grouped['mean'] = np.ceil(da_jobs_grouped['mean']).astype(int)
+da_jobs_grouped['min'] = da_jobs_grouped['min'].astype(int)
+da_jobs_grouped['max'] = da_jobs_grouped['max'].astype(int)
+# Display the grouped data
+da_jobs_grouped
+# Save the grouped data to a CSV file
+da_jobs_grouped.to_csv('2_analyst_salaries.csv')
 ```
 ## 2. Annual analyst salaries
 This analysis focuses on annual salaries comparing three major analyst roles: BI analyst, Data Analyst and Senior Data Analyst. <br>
