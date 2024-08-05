@@ -124,7 +124,8 @@ The third analysis highlights the division between the mentioned three main anal
 | Senior Data Analyst| Chicago      | 324   |
 | Senior Data Analyst| Dallas       | 235   |
 | Senior Data Analyst| New York     | 389   |
-**Python script: ([3_da_job_postings](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/3_da_job_postings.ipynb))**
+
+<br>**Python script: ([3_da_job_postings](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/3_da_job_postings.ipynb))**
 ```python
 # Import pandas library for data manipulation
 import pandas as pd
@@ -173,9 +174,65 @@ The goal of this analysis is to define the top 5 skills regarding all analyst ro
 | Austin       | Tableau    | 487   | 1598        | 30         |
 | Austin       | Python     | 427   | 1598        | 26         |
 | Austin       | Power BI   | 326   | 1598        | 20         |
-**Python script**: []():
-```python
 
+<br>**Python script: ([4_da_top_skills](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/4_da_top_skills.ipynb))**
+```python
+# Import necessary libraries for data manipulation and processing
+import pandas as pd
+import numpy as np
+import ast
+# Load the cleaned job data and city-level job counts
+df = pd.read_csv('data_jobs_cleaned.csv')
+df_us_job_counts = pd.read_csv('1_data_jobs_location_counts.csv')
+# Extract city from job location and create a list of target cities
+df['job_location'] = df['job_location'].str.split(',', expand=True)[0].str.strip()
+cities_list = df_us_job_counts['job_location'].tolist()
+# Filter the DataFrame for the top 5 cities
+df_5_cities = df[df['job_location'].isin(cities_list)]
+# Convert job skills column from string to list format
+df_5_cities['job_skills'] = df_5_cities['job_skills'].apply(lambda x: ast.literal_eval(x) if pd.notna(x) else x)
+# Filter for analyst job titles
+df_5_cities = df_5_cities[df_5_cities['job_title_short'].str.contains('Analyst')]
+# Explode job skills column for analysis
+df_5_exp = df_5_cities.explode('job_skills')
+# Create DataFrames for top skills in each city
+skills_AU = df_5_exp[df_5_exp['job_location']=='Austin']['job_skills'].value_counts().head()
+skills_AU = skills_AU.reset_index(name='count')
+skills_AT = df_5_exp[df_5_exp['job_location']=='Atlanta']['job_skills'].value_counts().head()
+skills_AT = skills_AT.reset_index(name='count')
+skills_NY = df_5_exp[df_5_exp['job_location']=='New York']['job_skills'].value_counts().head()
+skills_NY = skills_NY.reset_index(name='count')
+skills_CH = df_5_exp[df_5_exp['job_location']=='Chicago']['job_skills'].value_counts().head()
+skills_CH = skills_CH.reset_index(name='count')
+skills_DA = df_5_exp[df_5_exp['job_location']=='Dallas']['job_skills'].value_counts().head()
+skills_DA = skills_DA.reset_index(name='count')
+# Create containers to store city-skill DataFrames
+cities_dict = {}
+skills_cities = []
+# Populate the list of city-skill DataFrames
+skills_cities.append(skills_AU)
+skills_cities.append(skills_AT)
+skills_cities.append(skills_NY)
+skills_cities.append(skills_CH)
+skills_cities.append(skills_DA)
+# Create a dictionary mapping city names to their respective DataFrames
+for i in range(5):
+    cities_dict[cities_list[i]] = skills_cities[i]
+# Create a merged DataFrame to hold all city-skill data
+merged_df = pd.DataFrame(columns=['job_location', 'job_skills', 'count'])
+# Concatenate city-skill DataFrames into a single DataFrame
+for loc, df in cities_dict.items():
+    df['job_location'] = loc
+    merged_df = pd.concat([merged_df, df], ignore_index=True)
+# Calculate total job postings per city
+jobs_total = df_5_cities.groupby('job_location').size()
+jobs_total = jobs_total.reset_index(name='count_total')
+# Merge total job postings with skill counts DataFrame
+merged_df = merged_df.merge(jobs_total, on='job_location')
+# Calculate the percentage of job postings with each skill
+merged_df['percentage'] = (merged_df['count'] / merged_df['count_total'] * 100).astype(int)
+# Save the final DataFrame to a CSV file
+merged_df.to_csv('4_da_top_skills.csv', index=False)
 ```
 ## 5. Count of analyst job postings throughout 2023
 The final analysis of the project summarizes analyst job postings in the 5 cities and breaks them down to months. <br>
