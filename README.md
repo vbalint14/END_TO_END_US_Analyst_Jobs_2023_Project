@@ -261,6 +261,34 @@ The final analysis of the project summarizes analyst job postings in the 5 citie
 | 18    | Austin       | 7                | 189   |
 | 19    | Austin       | 8                | 319   |
 
+<br>**Python script: ([5_posting_months.ipynb]())**
+```python
+import pandas as pd  # Import pandas for data manipulation
+import ast  # Import ast for converting strings to lists
+# Load the cleaned job data and city-level job counts
+df = pd.read_csv('data_jobs_cleaned.csv')
+df_us_job_counts = pd.read_csv('1_data_jobs_location_counts.csv')
+# Extract city from job location and create a list of target cities
+df['job_location'] = df['job_location'].str.split(',', expand=True)[0].str.strip()
+cities_list = df_us_job_counts['job_location'].tolist()
+# Filter the DataFrame for the top 5 cities
+df_5_cities = df[df['job_location'].isin(cities_list)]
+# Convert job skills column from string to list format
+df_5_cities['job_skills'] = df_5_cities['job_skills'].apply(lambda x: ast.literal_eval(x) if pd.notna(x) else x)
+# Filter for analyst job titles
+df_5_cities = df_5_cities[df_5_cities['job_title_short'].str.contains('Analyst')]
+# Explode job skills column for analysis
+df_5_exp = df_5_cities.explode('job_skills')
+# Convert job posted date column to datetime format
+df_5_exp['job_posted_date'] = pd.to_datetime(df_5_exp['job_posted_date'])
+# Extract job posted month from the date
+df_5_exp['job_posted_month'] = df_5_exp['job_posted_date'].dt.month
+# Group the data by city and job posted month, counting the occurrences
+df_months = df_5_exp.groupby(['job_location', 'job_posted_month']).size()
+# Reset the index to create a DataFrame with columns: job_location, job_posted_month, count
+df_months = df_months.reset_index(name='count')
+```
+
 ## The final dashboard
 ![image](https://github.com/user-attachments/assets/ba7756ea-71f8-4614-90c8-2196119fd67b)
 
