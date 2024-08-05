@@ -287,6 +287,8 @@ df_5_exp['job_posted_month'] = df_5_exp['job_posted_date'].dt.month
 df_months = df_5_exp.groupby(['job_location', 'job_posted_month']).size()
 # Reset the index to create a DataFrame with columns: job_location, job_posted_month, count
 df_months = df_months.reset_index(name='count')
+# Save the final DataFrame to a CSV file
+df_months.to_csv('5_posting_months.csv', index=True, index_name='Index')
 ```
 
 ## The final dashboard
