@@ -14,6 +14,7 @@ The first analysis contains data about the five most popular US cities: New York
 
 <br>**Python script: ([1_job_locations.ipynb](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/1_job_locations.ipynb))**
 ```python
+# Import pandas library for data manipulation
 import pandas as pd
 # Load the cleaned jobs data
 df = pd.read_csv('data_jobs_cleaned.csv')
@@ -63,6 +64,7 @@ This analysis focuses on annual salaries comparing three major analyst roles: BI
 
 <br>**Python script: ([2_da_median_salaries.ipynb](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/2_da_median_salaries.ipynb))**
 ```python
+# Import pandas library for data manipulation
 import pandas as pd
 # Load the cleaned jobs data
 df = pd.read_csv('data_jobs_cleaned.csv')
@@ -122,9 +124,24 @@ The third analysis highlights the division between the mentioned three main anal
 | Senior Data Analyst| Chicago      | 324   |
 | Senior Data Analyst| Dallas       | 235   |
 | Senior Data Analyst| New York     | 389   |
-**Python script**: []():
+**Python script: ([3_da_job_postings](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/3_da_job_postings.ipynb))**
 ```python
-
+# Import pandas library for data manipulation
+import pandas as pd
+# Read the cleaned dataset and the dataset containing job location counts
+df = pd.read_csv('data_jobs_cleaned.csv')
+df_us_job_counts = pd.read_csv('1_data_jobs_location_counts.csv')
+# Extract the city from the 'job_location' column and create a list of cities
+df['job_location'] = df['job_location'].str.split(',', expand=True)[0].str.strip()
+cities_list = df_us_job_counts['job_location'].tolist()
+# Filter the dataframe to include only the top 5 cities
+df_5_cities = df[df['job_location'].isin(cities_list)]
+# Filter for analyst job titles and group by job title and city
+df_5_cities = df_5_cities[df_5_cities['job_title_short'].str.contains('Analyst')]
+df_5_cities = df_5_cities.groupby(['job_title_short', 'job_location']).size()
+df_5_cities = df_5_cities.reset_index(name='count')
+# Save the resulting dataframe to a CSV file
+df_5_cities.to_csv('3_da_job_postings.csv', index=False)
 ```
 ## 4. Most required analyst skills
 The goal of this analysis is to define the top 5 skills regarding all analyst roles per city. <br>
