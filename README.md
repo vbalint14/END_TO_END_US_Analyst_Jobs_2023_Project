@@ -53,6 +53,7 @@ This analysis focuses on annual salaries comparing three major analyst roles: BI
 | Senior Data Analyst| Chicago  | 114952 | 82000 | 162500 |
 | Senior Data Analyst| Dallas   | 114844 | 71850 | 175000 |
 | Senior Data Analyst| New York | 114934 | 60000 | 340000 |
+
 <br>**Python script: [2_da_median_salaries.ipynb]((https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/2_da_median_salaries.ipynb)):**:
 ```python
 import pandas as pd
