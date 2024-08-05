@@ -14,8 +14,8 @@ Content of [1_data_jobs_location_counts](https://github.com/vbalint14/END_TO_END
 | Austin       | 1584  |
 
 ## 2. Annual analyst salaries
-This analysis focuses on annual salaries comparing three major analyst roles: BI analyst, Data Analyst and Senior Data Analyst
-content of [2_analyst_salaries](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/2_analyst_salaries.csv):
+This analysis focuses on annual salaries comparing three major analyst roles: BI analyst, Data Analyst and Senior Data Analyst.
+Content of [2_analyst_salaries](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/2_analyst_salaries.csv):
 | Job Title       | Job Location | Mean   | Min   | Max    |
 |-----------------|--------------|--------|-------|--------|
 | Business Analyst| Atlanta      | 113731 | 60000 | 151950 |
