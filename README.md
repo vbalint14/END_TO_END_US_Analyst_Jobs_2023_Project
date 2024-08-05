@@ -11,7 +11,24 @@ The first analysis contains data about the five most popular US cities: New York
 | Chicago      | 1985  |
 | Dallas       | 1587  |
 | Austin       | 1584  |
-
+**Python script**: []():
+```python
+import pandas as pd
+df=pd.read_csv('data_jobs_cleaned.csv')
+df=df[(df['job_location']!='Anywhere') & (df['job_location']!='United States')]
+df['job_location'] = df['job_location'].str.split(',', expand=True)[0].str.strip()
+# Summarizing the frequency of job locations in job postings
+df_us_job_counts=(df[(df['job_title_short']=='Data Analyst') & (df['job_country']=='United States')]
+.groupby('job_location')
+.size()
+.sort_values(ascending=False)
+.head(15)
+)
+df_us_job_counts=df_us_job_counts.reset_index(name='count')
+df_us_job_counts
+# Saving the filtered dataframe to a csv file
+df_us_job_counts.to_csv('1_data_jobs_location_counts.csv', index=False)
+```
 ## 2. Annual analyst salaries
 This analysis focuses on annual salaries comparing three major analyst roles: BI analyst, Data Analyst and Senior Data Analyst. <br>
 **Content of [2_analyst_salaries](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/2_analyst_salaries.csv):**
@@ -32,7 +49,10 @@ This analysis focuses on annual salaries comparing three major analyst roles: BI
 | Senior Data Analyst| Chicago  | 114952 | 82000 | 162500 |
 | Senior Data Analyst| Dallas   | 114844 | 71850 | 175000 |
 | Senior Data Analyst| New York | 114934 | 60000 | 340000 |
+**Python script**: []():
+```python
 
+```
 ## 3. Job postings per Analyst roles
 The third analysis highlights the division between the mentioned three main analyst roles on the job market: <br>
 **Content of [3_da_job_postings](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/3_da_job_postings.csv):**
@@ -53,7 +73,10 @@ The third analysis highlights the division between the mentioned three main anal
 | Senior Data Analyst| Chicago      | 324   |
 | Senior Data Analyst| Dallas       | 235   |
 | Senior Data Analyst| New York     | 389   |
+**Python script**: []():
+```python
 
+```
 ## 4. Most required analyst skills
 The goal of this analysis is to define the top 5 skills regarding all analyst roles per city. <br>
 **Content of [4_da_top_skills](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/4_da_top_skills.csv):**
@@ -84,7 +107,10 @@ The goal of this analysis is to define the top 5 skills regarding all analyst ro
 | Austin       | Tableau    | 487   | 1598        | 30         |
 | Austin       | Python     | 427   | 1598        | 26         |
 | Austin       | Power BI   | 326   | 1598        | 20         |
+**Python script**: []():
+```python
 
+```
 ## 5. Count of analyst job postings throughout 2023
 The final analysis of the project summarizes analyst job postings in the 5 cities and breaks them down to months. <br>
 **The first 20 lines of [5_postings_months](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/5_postings_months.csv):**
@@ -110,8 +136,7 @@ The final analysis of the project summarizes analyst job postings in the 5 citie
 | 17    | Austin       | 6                | 228   |
 | 18    | Austin       | 7                | 189   |
 | 19    | Austin       | 8                | 319   |
-<>
-## The final dashboard
-![image](https://github.com/user-attachments/assets/67477cdd-3e63-47b3-acdc-7f6bf6e34065)
 
+## The final dashboard
+![image](https://github.com/user-attachments/assets/ba7756ea-71f8-4614-90c8-2196119fd67b)
 
