@@ -1,5 +1,5 @@
 # END TO END US Analyst Jobs 2023 Project Documentation #
-The project includes an [original dataset](https://huggingface.co/datasets/lukebarousse/data_jobs) that was cleaned before making further analysis and 5 additional csv files in which the data for visualizing the results of the analysis can be found. 
+The project includes an [original dataset](https://huggingface.co/datasets/lukebarousse/data_jobs) that was cleaned before making further analysis and 5 additional csv files in which the data for visualizing the results of the analysis can be found. The project focuses on only 5 cities in the United States.
 <br>
 ## 1. Count of Job postings per City
 The first analysis contains data about the five most popular US cities: New York, Atlanta, Austin, Dallas and Chicago. <br>
@@ -33,10 +33,17 @@ This analysis focuses on annual salaries comparing three major analyst roles: BI
 | Senior Data Analyst| Dallas   | 114844 | 71850 | 175000 |
 | Senior Data Analyst| New York | 114934 | 60000 | 340000 |
 
-**Visualizing the data:** <br>
-![image](https://github.com/user-attachments/assets/37213821-3cc9-4064-8f83-17107481baf1)
+## 3. Job postings per Analyst roles
+The third analysis highlights the division between the mentioned three main analyst roles on the job market:
+**Content of [3_da_job_postings](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/csv_files/3_da_job_postings.csv):**
 
 
+
+
+**Content of []():**
+
+
+**Content of []():**
 ## The final dashboard
 ![image](https://github.com/user-attachments/assets/67477cdd-3e63-47b3-acdc-7f6bf6e34065)
 
