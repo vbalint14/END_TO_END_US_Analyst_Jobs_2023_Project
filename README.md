@@ -1,3 +1,4 @@
+###### [Venter Bálint](https://github.com/vbalint14), 2024.08.05.
 # END TO END US Analyst Jobs 2023 Project Documentation #
 The project includes an [original dataset](https://huggingface.co/datasets/lukebarousse/data_jobs) that was cleaned before making further analysis and 5 additional csv files in which the data for visualizing the results of the analysis can be found. The project focuses on only 5 cities in the United States.
 <br>
