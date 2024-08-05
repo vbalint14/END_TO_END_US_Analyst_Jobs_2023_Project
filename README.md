@@ -12,7 +12,7 @@ The first analysis contains data about the five most popular US cities: New York
 | Dallas       | 1587  |
 | Austin       | 1584  |
 
-<br>**Python script**: [1_job_locations.ipynb](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/1_job_locations.ipynb):
+<br>**Python script: ([1_job_locations.ipynb](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/1_job_locations.ipynb))**
 ```python
 import pandas as pd
 df=pd.read_csv('data_jobs_cleaned.csv')
