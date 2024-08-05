@@ -125,7 +125,7 @@ The third analysis highlights the division between the mentioned three main anal
 | Senior Data Analyst| Dallas       | 235   |
 | Senior Data Analyst| New York     | 389   |
 
-<br>**Python script: ([3_da_job_postings](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/3_da_job_postings.ipynb))**
+<br>**Python script: ([3_da_job_postings.ipynb](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/3_da_job_postings.ipynb))**
 ```python
 # Import pandas library for data manipulation
 import pandas as pd
@@ -175,7 +175,7 @@ The goal of this analysis is to define the top 5 skills regarding all analyst ro
 | Austin       | Python     | 427   | 1598        | 26         |
 | Austin       | Power BI   | 326   | 1598        | 20         |
 
-<br>**Python script: ([4_da_top_skills](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/4_da_top_skills.ipynb))**
+<br>**Python script: ([4_da_top_skills.ipynb](https://github.com/vbalint14/END_TO_END_US_Analyst_Jobs_2023_Project/blob/main/jupyter_notebooks/4_da_top_skills.ipynb))**
 ```python
 # Import necessary libraries for data manipulation and processing
 import pandas as pd
